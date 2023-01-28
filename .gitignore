@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+.env
+venv
+Lib
+.idea
+.vscode
+__pycache__/
+*.py[cod]
+*.so
