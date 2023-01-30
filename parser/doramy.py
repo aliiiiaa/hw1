@@ -11,11 +11,11 @@ HEADERS = {
 
 }
 
-def get_html(url):
+def get_html_(url):
     req = requests.get(url, headers=HEADERS)
     return req
 
-def get_data(html):
+def get_data_(html):
     soup = BeautifulSoup(html, 'html.parser')
     items = soup.find_all('div', class_='post-home')
     for item in items:
@@ -28,13 +28,13 @@ def get_data(html):
     return doramy
 
 
-def parser():
-    html = get_html(URL)
+def parser_():
+    html = get_html_(URL)
     if html.status_code == 200:
         answer = []
         for page in range(1, 10):
-            html = get_html(f'{URL}page/{page}')
-            current = get_data(html.text)
+            html = get_html_(f'{URL}page/{page}')
+            current = get_data_(html.text)
             answer.extend(current)
         return answer
     else:
