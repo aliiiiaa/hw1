@@ -22,7 +22,7 @@ def get_data(html):
     anime = []
     for item in items:
         anime.append({
-            'Title': item.find('div', class_='b-content__inline_item-link').find('a').string,
+            'Title': item.find('div', class_='b-content__inline_item-link').find('a').get_text,
             'Link': item.find('div', class_='b-content__inline_item-link').find('a').get('href'),
             'Description': item.find('div', class_='b-content__inline_item-link').find('div').string,
             'Info': item.find('span', class_='info').string if item.find('span', class_='info')

@@ -3,7 +3,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import bot,  ADMINS
 from keyboards.client_kb import start_markup
 from database.bot_db import sql_command_random, sql_command_delete
-from parser.doramy import parser
+from parser.doramy import parser_
 from parser.anime import parser
 
 async def start_handler(message: types.Message):
@@ -81,8 +81,8 @@ async  def anime(message: types.Message):
             f"{i['Description']}\n"
             f"{i['Info']}"
         )
-async  def doramy(message: types.Message):
-    doramy = parser()
+async def doramy(message: types.Message):
+    doramy = parser_()
     for i in doramy:
         await bot.send_message(
             message.from_user.id,

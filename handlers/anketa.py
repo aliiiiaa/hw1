@@ -21,7 +21,7 @@ async def fsm_start(message: types.Message):
         await message.answer("Как зовут ментора?", reply_markup=client_kb.cancel_markup)
     else:
         await message.answer("Вы не админ!")
-# id = uuid4()
+
 
 async def load_name(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
